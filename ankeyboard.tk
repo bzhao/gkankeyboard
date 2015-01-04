@@ -1,0 +1,115 @@
+#!/usr/bin/wish
+
+# ZetCode Tcl/Tk tutorial
+#
+# In this script, we use the grid manager
+# to create a skeleton of a calculator.
+#
+# author: Jan Bodnar
+# last modified: March 2011
+# website: www.zetcode.com
+
+wm title . "remote" 
+wm geometry . +300+300
+
+frame .fr -padx 5 -pady 9
+pack .fr -fill both -expand 1 
+frame .fr2 -padx 5 -pady 9
+pack .fr2 -fill both -expand 1 
+
+###ttk::style configure TButton -width 5 -height 19 -font "serif 14" 
+ttk::style configure TButton -width 5 -height 19 -font "Helvetica 20" 
+
+#entry .fr.ent 
+#grid .fr.ent -row 0 -columnspan 4 -sticky we
+ 
+set rrry 8 
+
+ttk::button .fr.menu -text Menu \
+  -command { exec adb shell input keyevent 82 }
+ttk::button .fr.bck -text "Home" \
+  -command { exec adb shell input keyevent 3 }
+ttk::button .fr.lbl -text "Inter"
+ttk::button .fr.esc -text Esc \
+  -command { exec adb shell input keyevent 111 }
+ttk::button .fr.sev -text "7"
+ttk::button .fr.eig -text "8"
+ttk::button .fr.nin -text "9"
+ttk::button .fr.div -text "/"
+ttk::button .fr.fou -text "4"
+ttk::button .fr.fiv -text "5"
+ttk::button .fr.six -text "6"
+ttk::button .fr.mul -text "*"
+ttk::button .fr.one -text "1"
+ttk::button .fr.two -text "2"
+ttk::button .fr.thr -text "3"
+ttk::button .fr.mns -text "-"
+ttk::button .fr.zer -text "0"
+ttk::button .fr.dot -text "."
+ttk::button .fr.equ -text "="
+ttk::button .fr.pls -text "+"
+
+grid .fr.menu -row 1 -column 0 -ipady $rrry
+grid .fr.bck -row 1 -column 1 -ipady $rrry
+grid .fr.lbl -row 1 -column 2 -ipady $rrry 
+grid .fr.esc -row 1 -column 3 -ipady $rrry
+grid .fr.sev -row 2 -column 0 -ipady $rrry
+grid .fr.eig -row 2 -column 1 -ipady $rrry       
+grid .fr.nin -row 2 -column 2 -ipady $rrry
+grid .fr.div -row 2 -column 3 -ipady $rrry
+grid .fr.fou -row 3 -column 0 -ipady $rrry
+grid .fr.fiv -row 3 -column 1 -ipady $rrry
+grid .fr.six -row 3 -column 2 -ipady $rrry
+grid .fr.mul -row 3 -column 3 -ipady $rrry   
+grid .fr.one -row 4 -column 0 -ipady $rrry
+grid .fr.two -row 4 -column 1 -ipady $rrry
+grid .fr.thr -row 4 -column 2 -ipady $rrry
+grid .fr.mns -row 4 -column 3 -ipady $rrry
+grid .fr.zer -row 5 -column 0 -ipady $rrry
+grid .fr.dot -row 5 -column 1 -ipady $rrry        
+grid .fr.equ -row 5 -column 2 -ipady $rrry
+grid .fr.pls -row 5 -column 3 -ipady $rrry
+
+grid columnconfigure .fr 0 -pad 3
+grid columnconfigure .fr 1 -pad 3
+grid columnconfigure .fr 2 -pad 3
+grid columnconfigure .fr 3 -pad 3
+
+grid rowconfigure .fr 0 -pad 3        
+grid rowconfigure .fr 1 -pad 3  
+grid rowconfigure .fr 2 -pad 3  
+grid rowconfigure .fr 3 -pad 3  
+grid rowconfigure .fr 4 -pad 3  
+
+
+#ttk::style configure TButton -width 8 -height 19 -font "serif 14" 
+#ttk::
+
+ttk::button .fr2.back -text back \
+  -command { exec adb shell input keyevent 4 }
+
+ttk::button .fr2.up -text up \
+  -command { exec adb shell input keyevent 19 }
+
+ttk::button .fr2.down -text down \
+  -command { exec adb shell input keyevent 20 }
+
+ttk::button .fr2.left -text left \
+  -command { exec adb shell input keyevent 21 }
+
+ttk::button .fr2.right -text right \
+  -command { exec adb shell input keyevent 22 }
+
+ttk::button .fr2.center -text ok \
+  -command { exec adb shell input keyevent 23 }
+
+set rrry2 8 
+
+grid .fr2.up     -row 1 -column 1 -ipady $rrry2
+grid .fr2.left   -row 2 -column 0 -ipady $rrry2
+grid .fr2.center -row 2 -column 1 -ipady $rrry2       
+grid .fr2.right  -row 2 -column 2 -ipady $rrry2
+grid .fr2.down   -row 3 -column 1 -ipady $rrry2
+
+
+
