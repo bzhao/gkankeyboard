@@ -9,7 +9,7 @@
 # last modified: March 2011
 # website: www.zetcode.com
 
-wm title . "remote" 
+wm title . "remote control" 
 wm geometry . +300+300
 
 frame .fr -padx 5 -pady 9
@@ -24,6 +24,9 @@ ttk::style configure TButton -width 5 -height 19 -font "Helvetica 20"
 #grid .fr.ent -row 0 -columnspan 4 -sticky we
  
 set rrry 8 
+
+ttk::button .fr.power -text Power \
+  -command { exec adb shell input keyevent 26 }
 
 ttk::button .fr.menu -text Menu \
   -command { exec adb shell input keyevent 82 }
@@ -49,26 +52,32 @@ ttk::button .fr.dot -text "."
 ttk::button .fr.equ -text "="
 ttk::button .fr.pls -text "+"
 
-grid .fr.menu -row 1 -column 0 -ipady $rrry
-grid .fr.bck -row 1 -column 1 -ipady $rrry
-grid .fr.lbl -row 1 -column 2 -ipady $rrry 
-grid .fr.esc -row 1 -column 3 -ipady $rrry
-grid .fr.sev -row 2 -column 0 -ipady $rrry
-grid .fr.eig -row 2 -column 1 -ipady $rrry       
-grid .fr.nin -row 2 -column 2 -ipady $rrry
-grid .fr.div -row 2 -column 3 -ipady $rrry
-grid .fr.fou -row 3 -column 0 -ipady $rrry
-grid .fr.fiv -row 3 -column 1 -ipady $rrry
-grid .fr.six -row 3 -column 2 -ipady $rrry
-grid .fr.mul -row 3 -column 3 -ipady $rrry   
-grid .fr.one -row 4 -column 0 -ipady $rrry
-grid .fr.two -row 4 -column 1 -ipady $rrry
-grid .fr.thr -row 4 -column 2 -ipady $rrry
-grid .fr.mns -row 4 -column 3 -ipady $rrry
-grid .fr.zer -row 5 -column 0 -ipady $rrry
-grid .fr.dot -row 5 -column 1 -ipady $rrry        
-grid .fr.equ -row 5 -column 2 -ipady $rrry
-grid .fr.pls -row 5 -column 3 -ipady $rrry
+grid .fr.power -row 1 -column 0 -ipady $rrry
+
+grid .fr.menu -row 2 -column 0 -ipady $rrry
+grid .fr.bck -row 2 -column 1 -ipady $rrry
+grid .fr.lbl -row 2 -column 2 -ipady $rrry 
+grid .fr.esc -row 2 -column 3 -ipady $rrry
+
+grid .fr.sev -row 3 -column 0 -ipady $rrry
+grid .fr.eig -row 3 -column 1 -ipady $rrry       
+grid .fr.nin -row 3 -column 2 -ipady $rrry
+grid .fr.div -row 3 -column 3 -ipady $rrry
+
+grid .fr.fou -row 4 -column 0 -ipady $rrry
+grid .fr.fiv -row 4 -column 1 -ipady $rrry
+grid .fr.six -row 4 -column 2 -ipady $rrry
+grid .fr.mul -row 4 -column 3 -ipady $rrry   
+
+grid .fr.one -row 5 -column 0 -ipady $rrry
+grid .fr.two -row 5 -column 1 -ipady $rrry
+grid .fr.thr -row 5 -column 2 -ipady $rrry
+grid .fr.mns -row 5 -column 3 -ipady $rrry
+
+grid .fr.zer -row 6 -column 0 -ipady $rrry
+grid .fr.dot -row 6 -column 1 -ipady $rrry        
+grid .fr.equ -row 6 -column 2 -ipady $rrry
+grid .fr.pls -row 6 -column 3 -ipady $rrry
 
 grid columnconfigure .fr 0 -pad 3
 grid columnconfigure .fr 1 -pad 3
@@ -102,6 +111,9 @@ ttk::button .fr2.right -text right \
 
 ttk::button .fr2.center -text ok \
   -command { exec adb shell input keyevent 23 }
+
+
+# power 26
 
 set rrry2 8 
 
