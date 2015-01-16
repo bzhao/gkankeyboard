@@ -89,6 +89,7 @@ grid rowconfigure .fr 1 -pad 3
 grid rowconfigure .fr 2 -pad 3  
 grid rowconfigure .fr 3 -pad 3  
 grid rowconfigure .fr 4 -pad 3  
+grid rowconfigure .fr 5 -pad 3  
 
 
 #ttk::style configure TButton -width 8 -height 19 -font "serif 14" 
@@ -113,14 +114,14 @@ ttk::button .fr2.center -text ok \
   -command { exec adb shell input keyevent 23 }
 
 
-# power 26
-
 set rrry2 8 
 
 grid .fr2.up     -row 1 -column 1 -ipady $rrry2
+
 grid .fr2.left   -row 2 -column 0 -ipady $rrry2
 grid .fr2.center -row 2 -column 1 -ipady $rrry2       
 grid .fr2.right  -row 2 -column 2 -ipady $rrry2
+
 grid .fr2.down   -row 3 -column 1 -ipady $rrry2
 
 
