@@ -1,14 +1,5 @@
 #!/usr/bin/wish
 
-# ZetCode Tcl/Tk tutorial
-#
-# In this script, we use the grid manager
-# to create a skeleton of a calculator.
-#
-# author: Jan Bodnar
-# last modified: March 2011
-# website: www.zetcode.com
-
 wm title . "remote control" 
 wm geometry . +300+300
 
